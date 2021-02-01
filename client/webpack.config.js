@@ -42,5 +42,9 @@ module.exports = {
   },
   devtool: 'source-map',
   // https://webpack.js.org/concepts/mode/#mode-development
-  mode: 'development'
+  mode: 'development',
+  devServer: {
+    port: 1010,
+    publicPath: '/dist'
+  }
 };

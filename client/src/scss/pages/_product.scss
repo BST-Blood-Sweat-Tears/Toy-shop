@@ -18,11 +18,16 @@ main {
   .list__item img {
     width: 636px;
   }
+  .list__indicator {
+    text-align: center;
+    color: #EBEBEB;
+  }
 }
 
 .product__info {
   width: 276px;
   margin: 0 auto;
+  padding-top: 80px;
   h2 {
     font-weight: bold;
     font-size: 2.2rem;
@@ -31,28 +36,28 @@ main {
   .product__price {
     font-weight: 400;
     font-size: 2.1rem;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
   .product__details {
-    margin-bottom: 37px;
+    margin-bottom: 30px;
 
     strong {
       display: block;
       font-weight: bold;
       font-size: 1.5rem;
-      margin-bottom: 5px;
+      margin-bottom: 8px;
     }
 
     p {
       font-weight: 400;
       font-size: 1.5rem;
+      line-height: 1.3;
     }
   }
   .product_options {
     width: 276px;
     height: 45px;
     border: 1px solid #666;
-    padding: 13px;
     font-size: 1.5rem;
     margin-bottom: 20px;
 
@@ -60,7 +65,10 @@ main {
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between;
-      width: 250px;
+      width: 100%;
+      height: 100%;
+      font-size: 1.5rem;
+      padding: 13px;
     }
   }
 
@@ -68,10 +76,13 @@ main {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    margin-bottom: 30px;
     button {
       width: 130px;
       height: 45px;
       text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
     }
     .btn-list__basket {
       background-color: #FAD585;
@@ -84,7 +95,7 @@ main {
 
   .product__total-price {
     border-bottom: 1px solid #666;
-    padding: 10px;
+    padding: 15px 10px;
     text-align: right;
 
     .total-price__title {
@@ -104,9 +115,9 @@ main {
   background-color: #EBEBEB;
   padding: 13px;
   .item__option {
-    padding-bottom: 7px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #666;
-    margin-bottom: 18px;
+    margin-bottom: 13px;
     .option__selected {
       font-weight: bold;
     }

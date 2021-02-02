@@ -1,0 +1,135 @@
+// 레이아웃
+main {
+  width: 1080px;
+  margin: 0 auto;
+}
+.product {
+  background: orange;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+// 캐러셀
+.product__viewer {
+  .viewer__list{
+    width: 636px;
+  }
+  .list__item img {
+    width: 636px;
+  }
+}
+
+.product__info {
+  width: 276px;
+  margin: 0 auto;
+  h2 {
+    font-weight: bold;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+  }
+  .product__price {
+    font-weight: 400;
+    font-size: 2.1rem;
+    margin-bottom: 20px;
+  }
+  .product__details {
+    margin-bottom: 37px;
+
+    strong {
+      display: block;
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 1.5rem;
+    }
+  }
+  .product_options {
+    width: 276px;
+    height: 45px;
+    border: 1px solid #666;
+    padding: 13px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+
+    .options__btn {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      width: 250px;
+    }
+  }
+
+  .product__btn-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    button {
+      width: 130px;
+      height: 45px;
+      text-align: center;
+    }
+    .btn-list__basket {
+      background-color: #FAD585;
+      margin-right: 10px;
+    }
+    .btn-list__order {
+      background-color: #DEEFE0;
+    }
+  }
+
+  .product__total-price {
+    border-bottom: 1px solid #666;
+    padding: 10px;
+    text-align: right;
+
+    .total-price__title {
+      font-size: 1.5rem;
+    }
+    .total-price__price, .total-price__unit {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+  }
+}
+
+.product__selected {
+  margin-top: 15px;
+  width: 276px;
+  height: 86px;
+  background-color: #EBEBEB;
+  padding: 13px;
+  .item__option {
+    padding-bottom: 7px;
+    border-bottom: 1px solid #666;
+    margin-bottom: 18px;
+    .option__selected {
+      font-weight: bold;
+    }
+  }
+  .item__amount {
+    display: inline-block;
+    button {
+      padding: 0;
+      color: #666;
+    }
+    input {
+      width: 25px;
+      font-size: 1.6rem;
+      border: none;
+      background-color: #EBEBEB;
+      text-align: center;
+    }
+  }
+  .item__cont {
+    float: right;
+    .cont__price {
+      display: inline-block;
+      font-size: 1.6rem;
+    }
+  }
+}

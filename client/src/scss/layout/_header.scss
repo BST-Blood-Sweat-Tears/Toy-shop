@@ -1,5 +1,7 @@
 .header{
   width: 1080px;
+  margin: 0 auto;
+  padding: 10px 0;
 }
 .header-menu{
   list-style: none;
@@ -19,9 +21,4 @@
       padding: 0;
     }
   }
-}
-
-.main-banner-img{
-  display: block;
-  width: 1080px;
 }

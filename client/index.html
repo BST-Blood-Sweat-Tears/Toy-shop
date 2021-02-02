@@ -1,15 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./dist/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
   <script defer src="./dist/js/bundle.js"></script>
   <title>Toy Shop</title>
 </head>
+
 <body>
-  <header></header>
-  <main></main>
-  <footer></footer>
+  <header class="header">
+    <ul class="header-menu">
+      <div>
+        <li><a href=""><img src="/img/menu 1.png" alt="#"></a></li>
+        <li><a href=""><img src="/img/home (1) 1.png" alt="#"></a></li>
+      </div>
+      <div>
+        <li><a href=""><img src="/img/image 1.png" alt="#"></a></li>
+      </div>
+      <div>
+        <li><a href=""><img src="/img/loupe.png" alt="#"></a></li>
+        <li><a href=""><img src="/img/language.png" alt="#"></a></li>
+      </div>
+    </ul>
+  </header>
+  <main class="main">
+    <section class="product-container">
+      <h2 class="a11y-hidden">토이</h2>
+      <div class="main-banner">
+        <img class="main-banner-img" src="./media/visual.png" alt="토이">
+      </div>
+      <div class="result-sort-container">
+        <div class="result">
+          <span class="result__text">총 <span class="result__number">173</span>개</span>
+        </div>
+        <div class="sort">
+          <select class="sort__select-box" name="sort" id="sort">
+            <option value="default">Sort</option>
+            <option class="sort__select-option" value="Price low to high">Price low to high</option>
+            <option class="sort__select-option" value="Price high to low">Price high to low</option>
+          </select>
+        </div>
+      </div>
+      <ul class="category-container">
+        <li class="category">
+          <button class="category__btn lion">
+            <img class="category__img" src="./media/lion.png" alt="라이언">
+            <span class="category__name">LION</span>
+          </button>
+        </li>
+        <li class="category">
+          <button class="category__btn apeach">
+            <img class="category__img" src="./media/apeach.png" alt="아피치">
+            <span class="category__name">APEACH</span>
+          </button>
+        </li>
+        <li class="category">
+          <button class="category__btn muzi">
+            <img class="category__img" src="./media/muzi.png" alt="무지">
+            <span class="category__name">MUZI</span>
+          </button>
+        </li>
+        <li class="category">
+          <button class="category__btn frodo">
+            <img class="category__img" src="./media/frodo.png" alt="프로도">
+            <span class="category__name">FRODO</span>
+          </button>
+        </li>
+      </ul>
+      <ul class="product-lists-container">
+        <li class="product-list">
+          <a class="product-list__link" href="./src/html/product.html">
+            <img class="product-list__img" src="./media/20201208112018176_8809721507247_AW_00.png" alt="">
+            <span class="product-list__name">꿀잠메가바디필로우_라이언</span>
+            <span class="product-list__price">99,000원</span>
+          </a>
+        </li>
+        <li class="product-list">
+          <a class="product-list__link" href="./src/html/product.html">
+            <img class="product-list__img" src="./media/20201208112324006_8809721507254_AW_00.png" alt="">
+            <span class="product-list__name">꿀잠메가바디필로우_라이언</span>
+            <span class="product-list__price">99,000원</span>
+          </a>
+        </li>
+        <li class="product-list">
+          <a class="product-list__link" href="./src/html/product.html">
+            <img class="product-list__img" src="./media/20201208112640018_8809721507278_AW_00.png" alt="">
+            <span class="product-list__name">꿀잠메가바디필로우_라이언</span>
+            <span class="product-list__price">99,000원</span>
+          </a>
+        </li>
+        <li class="product-list">
+          <a class="product-list__link" href="./src/html/product.html">
+            <img class="product-list__img" src="./media/20201208112757433_8809721507285_AW_00.png" alt="">
+            <span class="product-list__name">꿀잠메가바디필로우_라이언</span>
+            <span class="product-list__price">99,000원</span>
+          </a>
+        </li>
+        <li class="product-list">
+          <a class="product-list__link" href="./src/html/product.html">
+            <img class="product-list__img" src="./media/20201208112018176_8809721507247_AW_00.png" alt="">
+            <span class="product-list__name">꿀잠메가바디필로우_라이언</span>
+            <span class="product-list__price">99,000원</span>
+          </a>
+        </li>
+        <li class="product-list">
+          <a class="product-list__link" href="./src/html/product.html">
+            <img class="product-list__img" src="./media/20201208112324006_8809721507254_AW_00.png" alt="">
+            <span class="product-list__name">꿀잠메가바디필로우_라이언</span>
+            <span class="product-list__price">99,000원</span>
+          </a>
+        </li>
+        <li class="product-list">
+          <a class="product-list__link" href="./src/html/product.html">
+            <img class="product-list__img" src="./media/20201208112640018_8809721507278_AW_00.png" alt="">
+            <span class="product-list__name">꿀잠메가바디필로우_라이언</span>
+            <span class="product-list__price">99,000원</span>
+          </a>
+        </li>
+        <li class="product-list">
+          <a class="product-list__link" href="./src/html/product.html">
+            <img class="product-list__img" src="./media/20201208112757433_8809721507285_AW_00.png" alt="">
+            <span class="product-list__name">꿀잠메가바디필로우_라이언</span>
+            <span class="product-list__price">99,000원</span>
+          </a>
+        </li>
+        <li class="product-list">
+          <a class="product-list__link" href="./src/html/product.html">
+            <img class="product-list__img" src="./media/20201208112018176_8809721507247_AW_00.png" alt="">
+            <span class="product-list__name">꿀잠메가바디필로우_라이언</span>
+            <span class="product-list__price">99,000원</span>
+          </a>
+        </li>
+        <li class="product-list">
+          <a class="product-list__link" href="./src/html/product.html">
+            <img class="product-list__img" src="./media/20201208112324006_8809721507254_AW_00.png" alt="">
+            <span class="product-list__name">꿀잠메가바디필로우_라이언</span>
+            <span class="product-list__price">99,000원</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="github-container">
+      <h3 class="a11y-hidden">만든이</h3>
+      <a href="https://github.com/ejinaaa" class="github__link">
+        <i class="fab fa-github github__icon"></i>
+      </a>
+      <a href="https://github.com/iamkjw77" class="github__link">
+        <i class="fab fa-github github__icon"></i>
+      </a>
+      <a href="https://github.com/choisuhyeok1255" class="github__link">
+        <i class="fab fa-github github__icon"></i>
+      </a>
+    </div>
+      <div class="developer-container">
+        <span class="developer__name">Eunjin Kang</span>
+        <span class="developer__name">Jiwon Kim</span>
+        <span class="developer__name">Suhyeok Choi</span>
+      </div>
+    <p class="copyright">ⓒ 2021 BST</p>
+  </footer>
 </body>
+
 </html>

@@ -1,0 +1,27 @@
+.header{
+  width: 1080px;
+}
+.header-menu{
+  list-style: none;
+  display: flex;
+  // background: yellow;
+  margin: 0;
+  padding: 0 15px;
+  justify-content: space-between;
+  div{
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    li{
+    // border: 1px solid black;
+
+      margin: 0 8px;
+      padding: 0;
+    }
+  }
+}
+
+.main-banner-img{
+  display: block;
+  width: 1080px;
+}

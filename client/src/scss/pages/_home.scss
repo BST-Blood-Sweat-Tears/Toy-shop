@@ -22,6 +22,7 @@
     margin-left: 800px;
   }
 }
+
 .sort__select-box {
   width: 160px;
   height: 45px;
@@ -33,7 +34,7 @@
   // border-bottom: 1px solid #000;
   
   .sort__select-option {
-    height: 45px;
+    line-height: 45px;
     text-indent: 2px;
   }
 }
@@ -58,7 +59,7 @@
   }
 }
 
-.product-container {
+.product-lists-container {
   margin: 0 auto;
   overflow: hidden;
 

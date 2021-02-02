@@ -70,10 +70,22 @@
 
   .product-list__link {
     display: block;
+    
+    &:hover .product-list__img {
+      transition: .3s;
+      transform: scale(1);
+    }
   }
-
-  .product-list__img {
+  
+  .product-list__img-container {
+    width: 256px;
+    height: 256px;
+    overflow: hidden;
     border: 1px solid #ebebeb;
+    
+    .product-list__img {
+      transform: scale(.8);
+    }
   }
 
   .product-list__name, .product-list__price {

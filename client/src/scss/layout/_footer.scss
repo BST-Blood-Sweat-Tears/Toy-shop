@@ -21,6 +21,10 @@
 
     .github__icon {
       font-size: 50px;
+
+      &:hover {
+        opacity: 0.6;
+      }
     }
   }
 }

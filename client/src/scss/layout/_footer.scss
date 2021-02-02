@@ -1,0 +1,37 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ebebeb;
+  margin-top: 100px;
+  padding: 60px 0 30px;
+}
+
+.github-container {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+
+  .github__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #666;
+
+    .github__icon {
+      font-size: 50px;
+    }
+  }
+}
+
+.developer-container {
+  display: flex;
+  justify-content: space-between;
+  width: 280px;
+  margin-top: 30px;
+}
+
+.copyright {
+  margin-top: 10px;
+}

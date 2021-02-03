@@ -101,6 +101,411 @@ const schema = Joi.object({
           stock: 7,
           price: 35000
         }
+      },
+      {
+        stock_id: 6,
+        S: {
+          stock: 2,
+          price: 15000
+        },
+        M: {
+          stock: 0,
+          price: 18000
+        },
+        L: {
+          stock: 17,
+          price: 21000
+        }
+      },
+      {
+        stock_id: 7,
+        S: {
+          stock: 8,
+          price: 15000
+        },
+        M: {
+          stock: 10,
+          price: 18000
+        },
+        L: {
+          stock: 5,
+          price: 21000
+        }
+      },
+      {
+        stock_id: 8,
+        S: {
+          stock: 1,
+          price: 36000
+        },
+        M: {
+          stock: 5,
+          price: 40000
+        },
+        L: {
+          stock: 2,
+          price: 45000
+        }
+      },
+      {
+        stock_id: 9,
+        S: {
+          stock: 3,
+          price: 36000
+        },
+        M: {
+          stock: 8,
+          price: 40000
+        },
+        L: {
+          stock: 0,
+          price: 45000
+        }
+      },
+      {
+        stock_id: 10,
+        S: {
+          stock: 2,
+          price: 32000
+        },
+        M: {
+          stock: 0,
+          price: 35000
+        },
+        L: {
+          stock: 0,
+          price: 38000
+        }
+      },
+      {
+        stock_id: 11,
+        S: {
+          stock: 0,
+          price: 32000
+        },
+        M: {
+          stock: 1,
+          price: 35000
+        },
+        L: {
+          stock: 0,
+          price: 38000
+        }
+      },
+      {
+        stock_id: 12,
+        S: {
+          stock: 6,
+          price: 12000
+        },
+        M: {
+          stock: 2,
+          price: 15000
+        },
+        L: {
+          stock: 0,
+          price: 18000
+        }
+      },
+      {
+        stock_id: 13,
+        S: {
+          stock: 0,
+          price: 12000
+        },
+        M: {
+          stock: 8,
+          price: 15000
+        },
+        L: {
+          stock: 5,
+          price: 18000
+        }
+      },
+      {
+        stock_id: 14,
+        S: {
+          stock: 9,
+          price: 12000
+        },
+        M: {
+          stock: 3,
+          price: 15000
+        },
+        L: {
+          stock: 11,
+          price: 18000
+        }
+      },
+      {
+        stock_id: 15,
+        S: {
+          stock: 3,
+          price: 12000
+        },
+        M: {
+          stock: 10,
+          price: 15000
+        },
+        L: {
+          stock: 7,
+          price: 18000
+        }
+      },
+      {
+        stock_id: 16,
+        S: {
+          stock: 3,
+          price: 28000
+        },
+        M: {
+          stock: 10,
+          price: 31000
+        },
+        L: {
+          stock: 7,
+          price: 35000
+        }
+      },
+      {
+        stock_id: 17,
+        S: {
+          stock: 2,
+          price: 15000
+        },
+        M: {
+          stock: 0,
+          price: 18000
+        },
+        L: {
+          stock: 17,
+          price: 21000
+        }
+      },
+      {
+        stock_id: 18,
+        S: {
+          stock: 8,
+          price: 15000
+        },
+        M: {
+          stock: 10,
+          price: 18000
+        },
+        L: {
+          stock: 5,
+          price: 21000
+        }
+      },
+      {
+        stock_id: 19,
+        S: {
+          stock: 1,
+          price: 36000
+        },
+        M: {
+          stock: 5,
+          price: 40000
+        },
+        L: {
+          stock: 2,
+          price: 45000
+        }
+      },
+      {
+        stock_id: 20,
+        S: {
+          stock: 3,
+          price: 36000
+        },
+        M: {
+          stock: 8,
+          price: 40000
+        },
+        L: {
+          stock: 0,
+          price: 45000
+        }
+      },
+      {
+        stock_id: 21,
+        S: {
+          stock: 2,
+          price: 32000
+        },
+        M: {
+          stock: 0,
+          price: 35000
+        },
+        L: {
+          stock: 0,
+          price: 38000
+        }
+      },
+      {
+        stock_id: 22,
+        S: {
+          stock: 0,
+          price: 32000
+        },
+        M: {
+          stock: 1,
+          price: 35000
+        },
+        L: {
+          stock: 0,
+          price: 38000
+        }
+      },
+      {
+        stock_id: 23,
+        S: {
+          stock: 0,
+          price: 12000
+        },
+        M: {
+          stock: 8,
+          price: 15000
+        },
+        L: {
+          stock: 5,
+          price: 18000
+        }
+      },
+      {
+        stock_id: 24,
+        S: {
+          stock: 9,
+          price: 12000
+        },
+        M: {
+          stock: 3,
+          price: 15000
+        },
+        L: {
+          stock: 11,
+          price: 18000
+        }
+      },
+      {
+        stock_id: 25,
+        S: {
+          stock: 3,
+          price: 12000
+        },
+        M: {
+          stock: 10,
+          price: 15000
+        },
+        L: {
+          stock: 7,
+          price: 18000
+        }
+      },
+      {
+        stock_id: 26,
+        S: {
+          stock: 3,
+          price: 28000
+        },
+        M: {
+          stock: 10,
+          price: 31000
+        },
+        L: {
+          stock: 7,
+          price: 35000
+        }
+      },
+      {
+        stock_id: 27,
+        S: {
+          stock: 2,
+          price: 15000
+        },
+        M: {
+          stock: 0,
+          price: 18000
+        },
+        L: {
+          stock: 17,
+          price: 21000
+        }
+      },
+      {
+        stock_id: 28,
+        S: {
+          stock: 8,
+          price: 15000
+        },
+        M: {
+          stock: 10,
+          price: 18000
+        },
+        L: {
+          stock: 5,
+          price: 21000
+        }
+      },
+      {
+        stock_id: 29,
+        S: {
+          stock: 1,
+          price: 36000
+        },
+        M: {
+          stock: 5,
+          price: 40000
+        },
+        L: {
+          stock: 2,
+          price: 45000
+        }
+      },
+      {
+        stock_id: 30,
+        S: {
+          stock: 3,
+          price: 36000
+        },
+        M: {
+          stock: 8,
+          price: 40000
+        },
+        L: {
+          stock: 0,
+          price: 45000
+        }
+      },
+      {
+        stock_id: 31,
+        S: {
+          stock: 2,
+          price: 32000
+        },
+        M: {
+          stock: 0,
+          price: 35000
+        },
+        L: {
+          stock: 0,
+          price: 38000
+        }
+      },
+      {
+        stock_id: 32,
+        S: {
+          stock: 0,
+          price: 32000
+        },
+        M: {
+          stock: 1,
+          price: 35000
+        },
+        L: {
+          stock: 0,
+          price: 38000
+        }
       }
     ];
     stockData.forEach((stock) => stockDB.insert(stock));
@@ -157,6 +562,18 @@ router.put('/:id', async (req, res, next) => {
       $set: value,
     });
     res.json(value);
+  } catch (error) {
+    next(error);
+  }
+});
+
+// DELETE ALL
+router.delete('/', async (req, res, next) => {
+  try {
+    await stockDB.remove({});
+    res.json({
+      message: 'Success',
+    });
   } catch (error) {
     next(error);
   }

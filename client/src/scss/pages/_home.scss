@@ -84,6 +84,8 @@
     border: 1px solid #ebebeb;
     
     .product-list__img {
+      display: block;
+      width: 256px;
       transform: scale(.8);
     }
   }

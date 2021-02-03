@@ -9,7 +9,9 @@ const router = express.Router();
 const schema = Joi.object({
   stock_id: Joi.required(),
   name: Joi.string().trim().required(),
+  title: Joi.string().trim().allow(null),
   description: Joi.string().trim().allow(null),
+  character: Joi.string().trim().required(),
   img_URL: Joi.array().required()
 });
 
@@ -21,7 +23,8 @@ const schema = Joi.object({
       {
         stock_id: 1,
         name: '윙크베이비필로우_라이언',
-        description: '깜찍한 윙크 베이비필로우 타임리스 베스트셀러 베이비필로우! 이번에는 윙크하는 얼굴로 베이비필로우가 돌아왔어요',
+        title: '내방의 꿀잠 요정, 메가 라이언',
+        description: '작고 소중한 사이즈로는 만족이 안 돼! 좋은 건 크게 보면 더 좋잖아요?',
         character: 'lion',
         img_URL: [
           'https://t1.daumcdn.net/friends/prod/product/20201208112018176_8809721507247_AW_00.jpg',
@@ -33,7 +36,8 @@ const schema = Joi.object({
       {
         stock_id: 2,
         name: '윙크베이비필로우_어피치',
-        description: '깜찍한 윙크 베이비필로우 타임리스 베스트셀러 베이비필로우! 이번에는 윙크하는 얼굴로 베이비필로우가 돌아왔어요',
+        title: '내방의 꿀잠 요정, 메가 어피치',
+        description: '작고 소중한 사이즈로는 만족이 안 돼! 좋은 건 크게 보면 더 좋잖아요?',
         character: 'apeach',
         img_URL: [
           'https://t1.daumcdn.net/friends/prod/product/20201208112324006_8809721507254_AW_00.jpg',
@@ -45,7 +49,8 @@ const schema = Joi.object({
       {
         stock_id: 3,
         name: '윙크베이비필로우_무지',
-        description: '깜찍한 윙크 베이비필로우 타임리스 베스트셀러 베이비필로우! 이번에는 윙크하는 얼굴로 베이비필로우가 돌아왔어요',
+        title: '내방의 꿀잠 요정, 메가 무지',
+        description: '작고 소중한 사이즈로는 만족이 안 돼! 좋은 건 크게 보면 더 좋잖아요?',
         character: 'muzi',
         img_URL: [
           'https://t1.daumcdn.net/friends/prod/product/20201208112512508_8809721507261_AW_00.jpg',
@@ -57,7 +62,8 @@ const schema = Joi.object({
       {
         stock_id: 4,
         name: '윙크베이비필로우_프로도',
-        description: '깜찍한 윙크 베이비필로우 타임리스 베스트셀러 베이비필로우! 이번에는 윙크하는 얼굴로 베이비필로우가 돌아왔어요',
+        title: '내방의 꿀잠 요정, 메가 프로도',
+        description: '작고 소중한 사이즈로는 만족이 안 돼! 좋은 건 크게 보면 더 좋잖아요?',
         character: 'frodo',
         img_URL: [
           'https://t1.daumcdn.net/friends/prod/product/20201208112930174_8809721507292_AW_00.jpg',
@@ -69,6 +75,7 @@ const schema = Joi.object({
       {
         stock_id: 5,
         name: '타이거 에디션 코스튬 인형_어피치',
+        title: null,
         description: null,
         character: 'apeach',
         img_URL: [
@@ -80,6 +87,7 @@ const schema = Joi.object({
       {
         stock_id: 6,
         name: '리틀얼굴쿠션 무지',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '오구오구 리틀얼굴쿠션 귀여운 게 최고야 짜릿해 늘 새로워! 다양한 표정을 구사하게 되어 더 귀여운 리틀 프렌즈 페이스 타입 쿠션을 만나보세요.',
         character: 'muzi',
         img_URL: [
@@ -91,6 +99,7 @@ const schema = Joi.object({
       {
         stock_id: 7,
         name: '리틀얼굴쿠션 프로도',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '오구오구 리틀얼굴쿠션 귀여운 게 최고야 짜릿해 늘 새로워! 다양한 표정을 구사하게 되어 더 귀여운 리틀 프렌즈 페이스 타입 쿠션을 만나보세요.',
         character: 'frodo',
         img_URL: [
@@ -102,6 +111,7 @@ const schema = Joi.object({
       {
         stock_id: 8,
         name: '페이스 말랑쿠션 라이언',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '자꾸만 손이 가는 마성의 미모 자꾸만 손이 가는 마성의 미모! 왕 큰 깐달걀 스타일의 라이언 페이스 말랑쿠션이에요.', 
         character: 'lion',
         img_URL: [
@@ -113,6 +123,7 @@ const schema = Joi.object({
       {
         stock_id: 9,
         name: '페이스 말랑쿠션 어피치',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '자꾸만 손이 가는 마성의 미모 자꾸만 손이 가는 마성의 미모! 왕 큰 깐달걀 스타일의 라이언 페이스 말랑쿠션이에요.',
         character: 'apeach',
         img_URL: [
@@ -124,6 +135,7 @@ const schema = Joi.object({
       {
         stock_id: 10,
         name: '베이비드리밍 러블리애착인형 라이언',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '나만의 애착라이언 소중한 애착인형과 함께 즐거운 시간을 보내는 리틀라이언. 포근포근한 인형으로 만나보세요.', 
         character: 'lion',
         img_URL: [
@@ -134,6 +146,7 @@ const schema = Joi.object({
       {
         stock_id: 11,
         name: '베이비드리밍 러블리애착인형 프로도',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '나만의 애착라이언 소중한 애착인형과 함께 즐거운 시간을 보내는 리틀라이언. 포근포근한 인형으로 만나보세요.', 
         character: 'frodo',
         img_URL: [
@@ -144,6 +157,7 @@ const schema = Joi.object({
       {
         stock_id: 12,
         name: '윙크베이비필로우_라이언',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '깜찍한 윙크 베이비필로우 타임리스 베스트셀러 베이비필로우! 이번에는 윙크하는 얼굴로 베이비필로우가 돌아왔어요',
         character: 'lion',
         img_URL: [
@@ -156,6 +170,7 @@ const schema = Joi.object({
       {
         stock_id: 13,
         name: '윙크베이비필로우_어피치',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '깜찍한 윙크 베이비필로우 타임리스 베스트셀러 베이비필로우! 이번에는 윙크하는 얼굴로 베이비필로우가 돌아왔어요',
         character: 'apeach',
         img_URL: [
@@ -168,6 +183,7 @@ const schema = Joi.object({
       {
         stock_id: 14,
         name: '윙크베이비필로우_무지',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '깜찍한 윙크 베이비필로우 타임리스 베스트셀러 베이비필로우! 이번에는 윙크하는 얼굴로 베이비필로우가 돌아왔어요',
         character: 'muzi',
         img_URL: [
@@ -180,6 +196,7 @@ const schema = Joi.object({
       {
         stock_id: 15,
         name: '윙크베이비필로우_프로도',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '깜찍한 윙크 베이비필로우 타임리스 베스트셀러 베이비필로우! 이번에는 윙크하는 얼굴로 베이비필로우가 돌아왔어요',
         character: 'frodo',
         img_URL: [
@@ -192,6 +209,7 @@ const schema = Joi.object({
       {
         stock_id: 16,
         name: '타이거 에디션 코스튬 인형_어피치',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: null,
         character: 'apeach',
         img_URL: [
@@ -203,6 +221,7 @@ const schema = Joi.object({
       {
         stock_id: 17,
         name: '리틀얼굴쿠션 무지',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '오구오구 리틀얼굴쿠션 귀여운 게 최고야 짜릿해 늘 새로워! 다양한 표정을 구사하게 되어 더 귀여운 리틀 프렌즈 페이스 타입 쿠션을 만나보세요.',
         character: 'muzi',
         img_URL: [
@@ -214,6 +233,7 @@ const schema = Joi.object({
       {
         stock_id: 18,
         name: '리틀얼굴쿠션 프로도',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '오구오구 리틀얼굴쿠션 귀여운 게 최고야 짜릿해 늘 새로워! 다양한 표정을 구사하게 되어 더 귀여운 리틀 프렌즈 페이스 타입 쿠션을 만나보세요.',
         character: 'frodo',
         img_URL: [
@@ -225,6 +245,7 @@ const schema = Joi.object({
       {
         stock_id: 19,
         name: '페이스 말랑쿠션 라이언',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '자꾸만 손이 가는 마성의 미모 자꾸만 손이 가는 마성의 미모! 왕 큰 깐달걀 스타일의 라이언 페이스 말랑쿠션이에요.', 
         character: 'lion',
         img_URL: [
@@ -236,6 +257,7 @@ const schema = Joi.object({
       {
         stock_id: 20,
         name: '페이스 말랑쿠션 어피치',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '자꾸만 손이 가는 마성의 미모 자꾸만 손이 가는 마성의 미모! 왕 큰 깐달걀 스타일의 라이언 페이스 말랑쿠션이에요.',
         character: 'apeach',
         img_URL: [
@@ -247,6 +269,7 @@ const schema = Joi.object({
       {
         stock_id: 21,
         name: '베이비드리밍 러블리애착인형 라이언',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '나만의 애착라이언 소중한 애착인형과 함께 즐거운 시간을 보내는 리틀라이언. 포근포근한 인형으로 만나보세요.', 
         character: 'lion',
         img_URL: [
@@ -257,6 +280,7 @@ const schema = Joi.object({
       {
         stock_id: 22,
         name: '베이비드리밍 러블리애착인형 프로도',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '나만의 애착라이언 소중한 애착인형과 함께 즐거운 시간을 보내는 리틀라이언. 포근포근한 인형으로 만나보세요.', 
         character: 'frodo',
         img_URL: [
@@ -267,6 +291,7 @@ const schema = Joi.object({
       {
         stock_id: 23,
         name: '윙크베이비필로우_어피치',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '깜찍한 윙크 베이비필로우 타임리스 베스트셀러 베이비필로우! 이번에는 윙크하는 얼굴로 베이비필로우가 돌아왔어요',
         character: 'apeach',
         img_URL: [
@@ -279,6 +304,7 @@ const schema = Joi.object({
       {
         stock_id: 24,
         name: '윙크베이비필로우_무지',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '깜찍한 윙크 베이비필로우 타임리스 베스트셀러 베이비필로우! 이번에는 윙크하는 얼굴로 베이비필로우가 돌아왔어요',
         character: 'muzi',
         img_URL: [
@@ -291,6 +317,7 @@ const schema = Joi.object({
       {
         stock_id: 25,
         name: '윙크베이비필로우_프로도',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '깜찍한 윙크 베이비필로우 타임리스 베스트셀러 베이비필로우! 이번에는 윙크하는 얼굴로 베이비필로우가 돌아왔어요',
         character: 'frodo',
         img_URL: [
@@ -303,6 +330,7 @@ const schema = Joi.object({
       {
         stock_id: 26,
         name: '타이거 에디션 코스튬 인형_어피치',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: null,
         character: 'apeach',
         img_URL: [
@@ -314,6 +342,7 @@ const schema = Joi.object({
       {
         stock_id: 27,
         name: '리틀얼굴쿠션 무지',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '오구오구 리틀얼굴쿠션 귀여운 게 최고야 짜릿해 늘 새로워! 다양한 표정을 구사하게 되어 더 귀여운 리틀 프렌즈 페이스 타입 쿠션을 만나보세요.',
         character: 'muzi',
         img_URL: [
@@ -325,6 +354,7 @@ const schema = Joi.object({
       {
         stock_id: 28,
         name: '리틀얼굴쿠션 프로도',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '오구오구 리틀얼굴쿠션 귀여운 게 최고야 짜릿해 늘 새로워! 다양한 표정을 구사하게 되어 더 귀여운 리틀 프렌즈 페이스 타입 쿠션을 만나보세요.',
         character: 'frodo',
         img_URL: [
@@ -336,6 +366,7 @@ const schema = Joi.object({
       {
         stock_id: 29,
         name: '페이스 말랑쿠션 라이언',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '자꾸만 손이 가는 마성의 미모 자꾸만 손이 가는 마성의 미모! 왕 큰 깐달걀 스타일의 라이언 페이스 말랑쿠션이에요.', 
         character: 'lion',
         img_URL: [
@@ -347,6 +378,7 @@ const schema = Joi.object({
       {
         stock_id: 30,
         name: '페이스 말랑쿠션 어피치',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '자꾸만 손이 가는 마성의 미모 자꾸만 손이 가는 마성의 미모! 왕 큰 깐달걀 스타일의 라이언 페이스 말랑쿠션이에요.',
         character: 'apeach',
         img_URL: [
@@ -358,6 +390,7 @@ const schema = Joi.object({
       {
         stock_id: 31,
         name: '베이비드리밍 러블리애착인형 라이언',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '나만의 애착라이언 소중한 애착인형과 함께 즐거운 시간을 보내는 리틀라이언. 포근포근한 인형으로 만나보세요.', 
         character: 'lion',
         img_URL: [
@@ -368,6 +401,7 @@ const schema = Joi.object({
       {
         stock_id: 32,
         name: '베이비드리밍 러블리애착인형 프로도',
+        title: '내방의 꿀잠 요정, 메가 프로도',
         description: '나만의 애착라이언 소중한 애착인형과 함께 즐거운 시간을 보내는 리틀라이언. 포근포근한 인형으로 만나보세요.', 
         character: 'frodo',
         img_URL: [

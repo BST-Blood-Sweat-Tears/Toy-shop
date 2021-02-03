@@ -1,4 +1,4 @@
-import product from './product/product.js';
+import renderProducts from './product/renderProducts';
 import '../scss/main.scss';
 
-product();
+renderProducts();

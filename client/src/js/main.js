@@ -1,4 +1,4 @@
-const axios = require('axios');
+import product from './product/product.js';
+import '../scss/main.scss';
 
-axios.get('http://localhost:5000/api/products')
-  .then(console.log);
+product();

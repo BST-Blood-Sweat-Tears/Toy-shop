@@ -1,7 +1,8 @@
 const express = require('express');
 
 const emojis = require('./emojis');
-const product = require('./product');
+const products = require('./products');
+const stock = require('./stock');
 
 const router = express.Router();
 
@@ -12,6 +13,7 @@ router.get('/', (req, res) => {
 });
 
 router.use('/emojis', emojis);
-router.use('/product', product);
+router.use('/products', products);
+router.use('/stock', stock);
 
 module.exports = router;

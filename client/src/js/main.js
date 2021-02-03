@@ -4,12 +4,16 @@
 //   .then(console.log);
 
 // import getImg from './product-detail';
+import renderProducts from './product/renderProducts';
 import headerRender from './header';
 import footerRender from './footer';
 import product from './product/product';
 import getImg from './product-detail';
 
+import '../scss/main.scss';
+
 document.addEventListener('DOMContentLoaded', headerRender);
 document.addEventListener('DOMContentLoaded', footerRender);
 document.addEventListener('DOMContentLoaded', getImg);
 // document.addEventListener('DOMContentLoaded', product);
+// document.addEventListener('DOMContentLoaded', renderProducts);

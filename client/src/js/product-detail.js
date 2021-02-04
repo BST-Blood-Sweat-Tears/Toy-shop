@@ -4,36 +4,32 @@ const axios = require('axios');
 
 const $main = document.querySelector('.main');
 
-const productRender = html => {
+const productRender = (productImg, indicator, pName, sPrice, title, description) => {
   $main.innerHTML = `
   <section class="product">
       <div class="product__viewer">
         <ul class="viewer__list">
-        ${html}
+          ${productImg}
         </ul>
         <ul class="list__indicator">
-          <li class="fas fa-circle"></li>
-          <li class="fas fa-circle"></li>
-          <li class="fas fa-circle"></li>
-          <li class="fas fa-circle"></li>
+          ${indicator}
         </ul>
       </div>
       <div class="product__info">
-        <h2>꿀잠메가바디필로우_라이언</h2>
+        <h2>${pName}</h2>
         <p class="product__price">
-          <strong class="price__original">99,000</strong>
+          <strong class="price__original">${sPrice}</strong>
           <span class="price__unit">원</span>
         </p>
         <div class="product__details">
-          <strong>내방의 꿀잠 요정, 메가 라이언</strong>
-          <p>작고 소중한 사이즈로는 만족이 안 돼! <br />
-            좋은 건 크게 보면 더 좋잖아요?</p>
+          <strong>${title}</strong>
+          <p>${description}</p>
         </div>
         <div class="product_options">
           <select class="options__btn" name="" id="">
-            <option value="">S</option>
-            <option value="">M</option>
-            <option value="">L</option>
+            <option value="">S (재고:)</option>
+            <option value="">M (재고:)</option>
+            <option value="">L (재고:)</option>
           </select>
         </div>
         <div class="product__btn-list">
@@ -73,21 +69,56 @@ const productRender = html => {
 };
 
 const imgRender = imgArr => {
-  let html = '';
+  let productImg = '';
   for (let i = 0; i < imgArr.length; i++) {
-    html += `<li class="list__item">
+    productImg += `<li class="list__item">
               <img src="${imgArr[i]}">
              </li>`;
   }
-  productRender(html);
+  return productImg;
 };
+
+const indicatorRender = length => {
+  let indicator = '';
+  for (let i = 0; i < length; i++) {
+    indicator += '<li class="fas fa-circle"></li>';
+  }
+  return indicator;
+};
+
+const renderMaterial = (() => {
+  let productImg = '';
+  let indicator = '';
+  let pName = '';
+  let pPrice = 0;
+  let pTitle = '';
+  let pDescription = '';
+
+  return (imgArr, length, name, sPrice, title, description) => {
+    productImg = imgRender(imgArr);
+    indicator = indicatorRender(length);
+    pName = name;
+    pPrice = sPrice;
+    pTitle = title;
+    pDescription = description;
+
+    return productRender(productImg, indicator, pName, pPrice, pTitle, pDescription);
+  };
+})();
 
 const getImg = async () => {
   // TODO: id 뽑아오기
-  const id = '601aa2f71de9c6249c8fae55';
-  const res = await axios.get('http://localhost:5000/api/products');
-  const product = await res.data.find(({ _id }) => _id === id);
-  imgRender(product.img_URL);
+  const id = '601adb1750b5ad711c90dbd4';
+  const pRes = await axios.get('http://localhost:5000/api/products');
+  const sRes = await axios.get('http://localhost:5000/api/stock');
+
+  const product = await pRes.data.find(({ _id }) => _id === id);
+  const stock = await sRes.data.find(({ stock_id: stockId }) => product.stock_id === stockId);
+
+  const sPrice = await stock.S.price;
+  const title = await product.title;
+  const description = await product.description;
+  renderMaterial(product.img_URL, product.img_URL.length, product.name, sPrice, title, description);
 };
 
 export default getImg;

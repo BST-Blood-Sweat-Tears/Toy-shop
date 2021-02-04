@@ -171,11 +171,11 @@ main {
       text-align: center;
     }
   }
-  .item__cont {
+  .item__price {
+    display: inline-block;
     float: right;
-    .cont__price {
-      display: inline-block;
-      font-size: 1.6rem;
-    }
+  }
+  .item__closed {
+    float: right;
   }
 }

@@ -1,5 +1,6 @@
 import checkValue from './checkValue';
 import clickMove from './clickMove';
+import renderProducts from '../product/renderProducts';
 
 const $main = document.querySelector('.main');
 
@@ -40,10 +41,18 @@ const productRender = renderObject => {
         </div>
         <div class="product__options"><div>
       </div>
+      <button class="back-btn">상품 일괄 보기</button>
     </section>
   `;
   checkValue();
   clickMove();
+  const backToProductList = () => {
+    const $backBtn = document.querySelector('.back-btn');
+    $backBtn.addEventListener('click', () => {
+      renderProducts();
+    });
+  };
+  backToProductList();
 };
 
 export default productRender;

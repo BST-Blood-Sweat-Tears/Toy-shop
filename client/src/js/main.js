@@ -7,7 +7,7 @@
 import renderProducts from './product/renderProducts';
 import headerRender from './header';
 import footerRender from './footer';
-import product from './product/product';
+import product from './product/renderProducts';
 import getImg from './product-detail';
 
 import '../scss/main.scss';

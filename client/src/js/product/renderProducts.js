@@ -1,15 +1,16 @@
+import axios from 'axios';
 import infiniteScrolling from './infiniteScrolling';
 import productsTemplate from './productsTemplate';
+import switchMainSection from './switchMainSection';
+import renderProductsByCharacter from './renderProductsByCharacter';
 
-// DOM
 const $main = document.querySelector('.main');
 
-const renderProductsMain = () => {
+const renderProducts = () => {
   axios.get('http://localhost:5000/api/products')
     .then(_products => {
       const products = [..._products.data];
       const productsCount = _products.data.length;
-      const renderItemCount = 12;
 
       $main.innerHTML = `<section class="product-container">
       <h2 class="a11y-hidden">토이</h2>
@@ -49,17 +50,20 @@ const renderProductsMain = () => {
       </ul>
       <ul class="product-lists-container">
       </ul>
-      </section>`
+      </section>`;
 
       const $productListContainer = document.querySelector('.product-lists-container');
+      const $categoryContainer = document.querySelector('.category-container');
 
       $productListContainer.innerHTML = products.map((product, i) => {
-        if (i >= renderItemCount) return;
+        if (i >= 12) return;
         return productsTemplate(product);
       }).join('');
 
-      infiniteScrolling(products, renderItemCount, $productListContainer);
+      infiniteScrolling(products);
+      switchMainSection($productListContainer);
+      renderProductsByCharacter($categoryContainer);
     });
 };
 
-export default renderProductsMain;
+export default renderProducts;

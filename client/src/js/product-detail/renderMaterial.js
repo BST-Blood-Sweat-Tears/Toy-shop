@@ -5,7 +5,7 @@ const imgRender = imgArr => {
   for (let i = 0; i < imgArr.length; i++) {
     productImg += `<li class="list__item">
               <img src="${imgArr[i]}">
-             </li>`;
+            </li>`;
   }
   return productImg;
 };
@@ -13,7 +13,7 @@ const imgRender = imgArr => {
 const indicatorRender = length => {
   let indicator = '';
   for (let i = 0; i < length; i++) {
-    indicator += '<li class="fas fa-circle"></li>';
+    indicator += `<li class="fas fa-circle" id="${i}"></li>`;
   }
   return indicator;
 };

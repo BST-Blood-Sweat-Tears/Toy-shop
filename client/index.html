@@ -10,10 +10,10 @@
   <title>Toy Shop</title>
 </head>
 <body>
-  <header class="header"></header>
+  <!-- <header class="header"></header>
   <main class="main"></main>
-  <footer class="footer"></footer>
-  <!-- <header class="header">
+  <footer class="footer"></footer> -->
+  <header class="header">
     <ul class="header-menu">
       <div>
         <li><a href=""><img src="./media/menu.png" alt="#"></a></li>
@@ -28,7 +28,63 @@
       </div>
     </ul>
   </header>
-  <main class="main"></main>
+  <main class="main">
+    <section class="product-container">
+      <h2 class="a11y-hidden">토이</h2>
+      <div class="main-banner">
+        <img class="main-banner-img" src="./media/visual.png" alt="토이">
+      </div>
+      <div class="result-sort-container">
+        <div class="result">
+          <span class="result__text">총 <span class="result__number">173</span>개</span>
+        </div>
+        <div class="sort">
+          <select class="sort__select-box" name="sort" id="sort">
+            <option value="default">신상품순</option>
+            <option class="sort__select-option" value="Price low to high">낮은 가격순</option>
+            <option class="sort__select-option" value="Price high to low">높은 가격순</option>
+          </select>
+        </div>
+      </div>
+      <ul class="category-container">
+        <li class="category">
+          <button class="category__btn lion">
+            <img class="category__img" src="./media/lion.png" alt="라이언">
+            <span class="category__name">LION</span>
+          </button>
+        </li>
+        <li class="category">
+          <button class="category__btn apeach">
+            <img class="category__img" src="./media/apeach.png" alt="아피치">
+            <span class="category__name">APEACH</span>
+          </button>
+        </li>
+        <li class="category">
+          <button class="category__btn muzi">
+            <img class="category__img" src="./media/muzi.png" alt="무지">
+            <span class="category__name">MUZI</span>
+          </button>
+        </li>
+        <li class="category">
+          <button class="category__btn frodo">
+            <img class="category__img" src="./media/frodo.png" alt="프로도">
+            <span class="category__name">FRODO</span>
+          </button>
+        </li>
+      </ul>
+      <ul class="product-lists-container">
+        <li class="product-list">
+          <a class="product-list__link" href="./src/html/product.html">
+            <div class="product-list__img-container">
+              <img class="product-list__img" src="./media/20201208112757433_8809721507285_AW_00.png" alt="">
+            </div>
+            <span class="product-list__name">꿀잠메가바디필로우_라이언</span>
+            <span class="product-list__price">99,000원</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
   <footer class="footer">
     <div class="github-container">
       <h3 class="a11y-hidden">만든이</h3>
@@ -48,6 +104,6 @@
         <span class="developer__name">Suhyeok Choi</span>
       </div>
     <p class="copyright">ⓒ 2021 BST all rights reserved.</p>
-  </footer> -->
+  </footer>
 </body>
 </html>

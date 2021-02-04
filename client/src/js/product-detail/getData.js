@@ -1,12 +1,12 @@
 import axios from 'axios';
 import renderMaterial from './renderMaterial';
 
-const getData = async () => {
+const getData = async targetId => {
   // TODO: id 뽑아오기
-  const id = '601adb1750b5ad711c90dbd4';
+  const id = targetId;
   const pRes = await axios.get('http://localhost:5000/api/products');
   const sRes = await axios.get('http://localhost:5000/api/stock');
-
+  // console.log(targetId)
   const product = await pRes.data.find(({ _id }) => _id === id);
   const stock = await sRes.data.find(({ stock_id: stockId }) => product.stock_id === stockId);
 

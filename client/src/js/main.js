@@ -1,9 +1,7 @@
 import headerRender from './header';
 import footerRender from './footer';
-// import renderProductsMain from './product/renderProducts';
-import getData from './product-detail/getData';
+import renderProducts from './product/renderProducts';
 
 document.addEventListener('DOMContentLoaded', headerRender);
 document.addEventListener('DOMContentLoaded', footerRender);
-// document.addEventListener('DOMContentLoaded', renderProductsMain);
-document.addEventListener('DOMContentLoaded', getData);
+document.addEventListener('DOMContentLoaded', renderProducts);

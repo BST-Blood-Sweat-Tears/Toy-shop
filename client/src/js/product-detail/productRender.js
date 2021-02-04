@@ -38,6 +38,7 @@ const productRender = renderObject => {
           <button class="btn-list__basket">장바구니</button>
           <button class="btn-list__order">구매하기</button>
         </div>
+        <div class="product__options"><div>
       </div>
     </section>
   `;

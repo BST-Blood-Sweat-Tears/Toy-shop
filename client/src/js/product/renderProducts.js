@@ -1,25 +1,15 @@
-const axios = require('axios');
-// const babel = require('@babel/polyfill');
+import infiniteScrolling from './infiniteScrolling';
+import productsTemplate from './productsTemplate';
 
 // DOM
 const $main = document.querySelector('.main');
 
-let products = [];
-
-// Functions
-const getTemplete = product => `<li id="${product.id}" class="product-list">
-<a class="product-list__link" href="./src/html/product.html">
-<div class="product-list__img-container">
-<img class="product-list__img" src="${product.img_URL[0]}" alt="">
-</div>
-<span class="product-list__name">${product.name}</span>
-</a>
-</li>`;
-
 const renderProductsMain = () => {
   axios.get('http://localhost:5000/api/products')
     .then(_products => {
-      products = _products.data;
+      const products = [..._products.data];
+      const productsCount = _products.data.length;
+      const renderItemCount = 12;
 
       $main.innerHTML = `<section class="product-container">
       <h2 class="a11y-hidden">토이</h2>
@@ -28,7 +18,7 @@ const renderProductsMain = () => {
       </div>
       <div class="result-sort-container">
         <div class="result">
-          <span class="result__text">총 <span class="result__number">${products.length}</span>개</span>
+          <span class="result__text">총 <span class="result__number">${productsCount}</span>개</span>
         </div>
       </div>
       <ul class="category-container">
@@ -63,10 +53,13 @@ const renderProductsMain = () => {
 
       const $productListContainer = document.querySelector('.product-lists-container');
 
-      $productListContainer.innerHTML = products.map(product => getTemplete(product)).join('');
+      $productListContainer.innerHTML = products.map((product, i) => {
+        if (i >= renderItemCount) return;
+        return productsTemplate(product);
+      }).join('');
+
+      infiniteScrolling(products, renderItemCount, $productListContainer);
     });
 };
-
-window.addEventListener('DOMContentLoaded', renderProductsMain);
 
 export default renderProductsMain;

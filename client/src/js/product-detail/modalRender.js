@@ -1,4 +1,5 @@
 import options from './globalState';
+import clickCount from './clickCount';
 
 const render = () => {
   const $productOptions = document.querySelector('.product__options');
@@ -20,49 +21,6 @@ const render = () => {
           <span class="price__unit">원</span>
         </p>
     </div>`).join('');
-
-  const clickCount = () => {
-    const $up = document.querySelector('.amount__up');
-    const $down = document.querySelector('.amount__down');
-    const $countInput = document.querySelector('.amount__input');
-    const $closed = document.querySelector('.item__closed');
-    const $price = document.querySelector('.price__real');
-
-    const setPrice = count => {
-      const price = $price.getAttribute('value');
-      $price.textContent = price * count;
-    };
-
-    const setTotalPrice = () => {
-
-    };
-
-    $productOptions.onclick = () => {
-      let count = +($countInput.value);
-      $countInput.value = ++count;
-      const id = $up.closest('.product__selected').getAttribute('id');
-
-      options.arr = options.arr.map(option =>
-        (option.id === +id ? { ...options.arr, count } : option));
-      render();
-
-      setPrice(count);
-      setTotalPrice();
-    };
-
-    $down.onclick = () => {
-      let count = +($countInput.value);
-      if (count < 2) return;
-      $countInput.value = --count;
-
-      setPrice(count);
-      setTotalPrice();
-    };
-
-    $closed.onclick = e => {
-      e.target.parentNode.remove();
-    };
-  };
 
   clickCount();
 };

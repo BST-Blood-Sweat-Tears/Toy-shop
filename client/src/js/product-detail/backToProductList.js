@@ -1,9 +1,9 @@
-import renderProducts from '../product/renderProducts';
+import renderProductsMainSection from '../product/renderProductsMainSection';
 
 const backToProductList = () => {
   const $backBtn = document.querySelector('.back-btn');
   $backBtn.addEventListener('click', () => {
-    renderProducts();
+    renderProductsMainSection();
   });
 };
 

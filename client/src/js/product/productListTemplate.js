@@ -1,4 +1,4 @@
-const productsTemplate = product => `<li id="${product._id}" class="product-list">
+const productListTemplate = product => `<li id="${product._id}" class="product-list">
   <button class="product-list__link">
   <div class="product-list__img-container">
   <img class="product-list__img" src="${product.img_URL[0]}" alt="${product.name}">
@@ -7,4 +7,4 @@ const productsTemplate = product => `<li id="${product._id}" class="product-list
   </button>
 </li>`;
 
-export default productsTemplate;
+export default productListTemplate;

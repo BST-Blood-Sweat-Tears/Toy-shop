@@ -1,37 +1,26 @@
-/* eslint-disable max-len */
-import productsTemplate from './productsTemplate';
+import productListTemplate from './productListTemplate';
 
-const $footer = document.querySelector('.footer');
+const infiniteScrolling = ($productListContainer, products, renderItemCount) => {
+  const $footer = document.querySelector('.footer');
+  
+  let finishScrollCount = 1;
 
-let finishScrollCount = 1;
-const renderItemCount = 12;
-
-const infiniteScrolling = (products, characterStatus) => {
-  const $productListContainer = document.querySelector('.product-lists-container');
-
-  const handleIntersect = (entries, observer) => {
-    console.log(characterStatus)
-    if ($productListContainer.lastChild.id === products[products.length - 1]._id) observer.unobserve($footer);
-
+  const observer = new IntersectionObserver((entries, observer) => {
     if (entries[0].isIntersecting) {
-      setTimeout(() => {
-        $productListContainer.innerHTML += products.map((product, i) => {
-          if (renderItemCount * finishScrollCount - 1 < i && i < renderItemCount + renderItemCount * finishScrollCount) {
-            return productsTemplate(product);
-          }
-        }).join('');
+      if ($productListContainer.lastChild.id === products[products.length - 1]._id) {
+        observer.unobserve($footer);
+        return;
+      }
+      $productListContainer.innerHTML += products.filter((_product, i) => renderItemCount * finishScrollCount - 1 < i && i < renderItemCount + renderItemCount * finishScrollCount).map(product => productListTemplate(product)).join('');
 
-        finishScrollCount++;
-      }, 100);
-    };
-  }
-
-  const observer = new IntersectionObserver(handleIntersect, {
+      finishScrollCount++;
+    }
+  }, {
     root: null,
     threshold: 1,
   });
 
   observer.observe($footer);
-};
+}
 
 export default infiniteScrolling;

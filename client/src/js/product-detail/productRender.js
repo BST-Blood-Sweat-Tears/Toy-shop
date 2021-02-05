@@ -46,9 +46,9 @@ const productRender = renderObject => {
           <button class="btn-list__basket">장바구니</button>
           <button class="btn-list__order">구매하기</button>
         </div>
+        <button class="back-btn">상품 일괄 보기</button>
         <div class="product__options"><div>
       </div>
-      <button class="back-btn">상품 일괄 보기</button>
     </section>
   `;
   checkValue();

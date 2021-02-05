@@ -1,6 +1,7 @@
 import checkValue from './checkValue';
 import clickMove from './clickMove';
-import renderProductsMainSection from '../product/renderProductsMainSection';
+
+import backToProductList from './backToProductList';
 
 const $main = document.querySelector('.main');
 
@@ -30,9 +31,15 @@ const productRender = renderObject => {
         <div class="product_options">
           <select class="options__btn" name="" id="">
             <option value="All">전체</option>
-            <option value="S ${renderObject.sPrice}">S (재고:${renderObject.sStocks})</option>
-            <option value="M ${renderObject.mPrice}">M (재고:${renderObject.mStocks})</option>
-            <option value="L ${renderObject.lPrice}">L (재고:${renderObject.lStocks})</option>
+            <option value="S ${renderObject.sPrice} ${renderObject.sStocks}">
+            S (재고:${renderObject.sStocks})
+            </option>
+            <option value="M ${renderObject.mPrice} ${renderObject.mStocks}">
+            M (재고:${renderObject.mStocks})
+            </option>
+            <option value="L ${renderObject.lPrice} ${renderObject.lStocks}">
+            L (재고:${renderObject.lStocks})
+            </option>
           </select>
         </div>
         <div class="product__btn-list">
@@ -46,12 +53,6 @@ const productRender = renderObject => {
   `;
   checkValue();
   clickMove();
-  const backToProductList = () => {
-    const $backBtn = document.querySelector('.back-btn');
-    $backBtn.addEventListener('click', () => {
-      renderProductsMainSection();
-    });
-  };
   backToProductList();
 };
 

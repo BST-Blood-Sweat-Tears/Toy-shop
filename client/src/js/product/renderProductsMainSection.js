@@ -1,17 +1,13 @@
 import axios from 'axios';
-import infiniteScrolling from './infiniteScrolling';
-import productsTemplate from './productsTemplate';
+import renderProductList from './renderProductList';
 import switchMainSection from './switchMainSection';
-import renderProductsByCharacter from './renderProductsByCharacter';
+import switchCharacterStatus from './switchCharacterStatus';
 
 const $main = document.querySelector('.main');
 
-const renderProducts = () => {
+const renderProductsMainSection = () => {
   axios.get('http://localhost:5000/api/products')
     .then(_products => {
-      const products = [..._products.data];
-      const productsCount = _products.data.length;
-
       $main.innerHTML = `<section class="product-container">
       <h2 class="a11y-hidden">토이</h2>
       <div class="main-banner">
@@ -19,7 +15,7 @@ const renderProducts = () => {
       </div>
       <div class="result-sort-container">
         <div class="result">
-          <span class="result__text">총 <span class="result__number">${productsCount}</span>개</span>
+          <span class="result__text">총 <span class="result__number">${_products.data.length}</span>개</span>
         </div>
       </div>
       <ul class="category-container">
@@ -52,18 +48,10 @@ const renderProducts = () => {
       </ul>
       </section>`;
 
-      const $productListContainer = document.querySelector('.product-lists-container');
-      const $categoryContainer = document.querySelector('.category-container');
-
-      $productListContainer.innerHTML = products.map((product, i) => {
-        if (i >= 12) return;
-        return productsTemplate(product);
-      }).join('');
-
-      infiniteScrolling(products);
-      switchMainSection($productListContainer);
-      renderProductsByCharacter($categoryContainer);
+      renderProductList('all');
+      switchMainSection();
+      switchCharacterStatus();
     });
 };
 
-export default renderProducts;
+export default renderProductsMainSection;

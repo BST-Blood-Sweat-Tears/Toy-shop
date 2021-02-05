@@ -54,6 +54,11 @@ const productRender = renderObject => {
   checkValue();
   clickMove();
   backToProductList();
+
+  setTimeout(() => {
+    const $elems = document.querySelectorAll('.list__indicator li');
+    $elems[0].classList.add('indicator__active');
+  }, 0);
 };
 
 export default productRender;

@@ -14,16 +14,26 @@ const clickMove = () => {
       pager.classList.remove('indicator__active');
     });
     e.target.classList.add('indicator__active');
-    // if(e.target.id === $listIndicator.id) $listIndicator.classList.add('indicatoractive');
   };
 
-  const imgCount = $viewerList.children.length;
-
   setInterval(() => {
-    // $viewerList.style.transform = 'translate(-636px)';
+    const $viewerList = document.querySelector('.viewer__list');
+    const $listIndicator = document.querySelector('.list__indicator');
+    const countList = [...$listIndicator.children];
+
+    countList.forEach(indicator => {
+      indicator.classList.remove('indicator__active');
+    });
+
+    const $elems = document.getElementsByClassName('fa-circle');
+    let checkPoint = startPosition / 636;
+
+    const elems = [...$elems];
+    elems[checkPoint].classList.add('indicator__active');
+
     $viewerList.style.transform = 'translate(-' + startPosition + 'px)';
     startPosition += 636;
-    if (startPosition === 636 * imgCount) startPosition = 0;
+    if (startPosition === 636 * countList.length) startPosition = 0;
   }, 3000);
 };
 

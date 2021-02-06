@@ -6,9 +6,7 @@
 
 💝💗다양한 캐릭터 인형을 구매해보세요!💝💗
 
-<!-- <img src="https://user-images.githubusercontent.com/39546083/94138332-ecd8a700-fea2-11ea-9666-926c514ddb8a.gif"> -->
-<img src="./client/media/page_01.PNG" style="width: 240px">
-<img src="./client/media/page_02.PNG" style="width: 240px; vertical-align: top">
+<img src="./client/media/simulation.gif">
 
 ## 👨‍👩‍👦‍👦BST 사람들
 
@@ -28,7 +26,8 @@
 ## :paperclip:주요 기능
 ##### <상품 페이지>
 - 무한 스크롤
-- 상품 클릭시, 해당 상품 랜더 
+- 상품 클릭시, 해당 상품 랜더
+- 캐릭터 카테고리 클릭 시 해당 상품 렌더
 
 ##### <상품 상세페이지>
 - 해당 상품 정보 랜더
